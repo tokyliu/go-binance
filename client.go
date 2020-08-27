@@ -14,8 +14,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/adshao/go-binance/common"
-	"github.com/adshao/go-binance/futures"
+	"github.com/tokyliu/go-binance/common"
+	"github.com/tokyliu/go-binance/futures"
 	"github.com/bitly/go-simplejson"
 )
 
@@ -155,11 +155,11 @@ func newJSON(data []byte) (j *simplejson.Json, err error) {
 // NewClient initialize an API client instance with API key and secret key.
 // You should always call this function before using this SDK.
 // Services will be created by the form client.NewXXXService().
-func NewClient(apiKey, secretKey string) *Client {
+func NewClient(baseUrl,apiKey, secretKey string) *Client {
 	return &Client{
 		APIKey:     apiKey,
 		SecretKey:  secretKey,
-		BaseURL:    "https://api.binance.com",
+		BaseURL:    baseUrl,
 		UserAgent:  "Binance/golang",
 		HTTPClient: http.DefaultClient,
 		Logger:     log.New(os.Stderr, "Binance-golang ", log.LstdFlags),

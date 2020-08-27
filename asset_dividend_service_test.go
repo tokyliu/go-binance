@@ -3,7 +3,6 @@ package binance
 import (
 	"context"
 	"testing"
-
 	"github.com/stretchr/testify/suite"
 )
 
